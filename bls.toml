@@ -15,9 +15,9 @@ command = "npm run build:release"
 [[deployments]]
 name = "blessnet"
 description = ""
-cid = "bafybeidpvke5ivqox7dpuaekmfv7akyd4llbsgjzs2za4sredxjy3kh4de"
-created = "2025-07-22T17:45:56.949Z"
+cid = "bafybeif5nnbdgzii6xpgtp2mpu7ec3eclyylpnplpkoz27bjutnwitou7u"
+created = "2025-07-22T19:28:14.335Z"
 
   [deployments.runtime]
   url = "blessnet.tar.gz"
-  checksum = "f8db30f116299fb7df8de9d18109543af8c0364f9cad67aaf7b7e5cfd5ee27cb"
+  checksum = "e1bbd6cb582b6d2f3dc95dbb061a7a72ca5fc8946118d78b9df4cff6cec38781"

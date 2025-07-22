@@ -33,8 +33,8 @@ export function ProfileCard({
     >
       <CardContent className="px-2 sm:px-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3 flex-1 ">
-            <div className="flex items-center justify-center w-10 h-10 bg-[#FEF3C7] rounded-full">
+          <div className="flex items-center gap-2 flex-1 ">
+            <div className="flex items-center justify-center w-10 h-10 bg-[#FEF3C7] rounded-full ml-2">
               <User className="h-5 w-5 text-primary" />
             </div>
 
@@ -52,8 +52,8 @@ export function ProfileCard({
             </div>
           </div>
 
-          <div className="flex items-center gap-1 sm:gap-2">
-            <div className="flex items-center space-x-2">
+          <div className="flex items-center">
+            <div className="flex items-center space-x-2 mr-2">
               <Checkbox
                 id={`interaction-${profile.id}`}
                 checked={profile.isInteractedToday}

@@ -48,7 +48,7 @@ const Index = () => {
                   <CardTitle className="flex items-center gap-2 text-foreground text-lg">
                     <List className="h-5 w-5 text-primary flex-shrink-0" />
                     <span className="truncate">
-                      Your Profiles ({profiles.length})
+                      Your Smart Profiles ({profiles.length})
                     </span>
                   </CardTitle>
                 </CardHeader>
