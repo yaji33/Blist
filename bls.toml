@@ -1,0 +1,23 @@
+name = "template_name"
+version = "1.0.0"
+type = "text"
+production_host = "fuchsia-manatee-katee-cyezlwma.bls.dev"
+
+[deployment]
+permission = "public"
+nodes = 1
+
+[build_release]
+dir = "build"
+entry = "template_name.wasm"
+command = "npm run build:release"
+
+[[deployments]]
+name = "blessnet"
+description = ""
+cid = "bafybeib2wrljudwmyfso6zryyzrhhehma4shhkntozwtm2fzvgjzcynpk4"
+created = "2025-07-22T13:41:56.578Z"
+
+  [deployments.runtime]
+  url = "blessnet.tar.gz"
+  checksum = "cce89f1de5a7bc54c49bca9c49e53ae077cd81d2af819800a7954a2175a4b053"
