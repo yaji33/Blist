@@ -11,7 +11,6 @@ const defaultData: StorageData = {
 export function useLocalStorage() {
   const [data, setData] = useState<StorageData>(defaultData);
 
-  // Load data from localStorage on mount
   useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
@@ -24,7 +23,6 @@ export function useLocalStorage() {
     }
   }, []);
 
-  // Save data to localStorage whenever data changes
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
@@ -33,7 +31,6 @@ export function useLocalStorage() {
     }
   }, [data]);
 
-  // Check if we need to reset daily interactions
   useEffect(() => {
     const today = new Date().toDateString();
     if (data.lastResetDate !== today) {
@@ -52,7 +49,6 @@ export function useLocalStorage() {
     const username = extractUsernameFromUrl(profileUrl);
     if (!username) return false;
 
-    // Check if profile already exists
     const exists = data.profiles.some(
       (p) => p.username.toLowerCase() === username.toLowerCase()
     );

@@ -27,14 +27,14 @@ export function ProfileCard({
 
   return (
     <Card
-      className={`bg-gradient-card shadow-soft hover:shadow-button transition-all duration-200 ${
+      className={`border border-[#DCDCDC]  hover:shadow-[#F8D347] transition-all duration-200 ${
         isRemoving ? "animate-scale-out opacity-50" : "animate-fade-in"
       }`}
     >
-      <CardContent className="p-4">
+      <CardContent className="px-2 sm:px-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3 flex-1">
-            <div className="flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full">
+          <div className="flex items-center gap-3 flex-1 ">
+            <div className="flex items-center justify-center w-10 h-10 bg-[#FEF3C7] rounded-full">
               <User className="h-5 w-5 text-primary" />
             </div>
 
@@ -52,13 +52,13 @@ export function ProfileCard({
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
             <div className="flex items-center space-x-2">
               <Checkbox
                 id={`interaction-${profile.id}`}
                 checked={profile.isInteractedToday}
                 onCheckedChange={() => onToggleInteraction(profile.id)}
-                className="data-[state=checked]:bg-success data-[state=checked]:border-success"
+                className="data-[state=checked]:bg-[#FEF3C7] data-[state=checked]:border-[#F8D347] cursor-pointer"
               />
               <label
                 htmlFor={`interaction-${profile.id}`}
@@ -72,7 +72,7 @@ export function ProfileCard({
               variant="ghost"
               size="sm"
               onClick={() => window.open(profile.profileUrl, "_blank")}
-              className="h-8 w-8 p-0"
+              className="h-8 w-8 p-0 cursor-pointer"
             >
               <ExternalLink className="h-4 w-4" />
             </Button>
@@ -81,7 +81,7 @@ export function ProfileCard({
               variant="ghost"
               size="sm"
               onClick={handleRemove}
-              className="h-8 w-8 p-0 text-destructive hover:text-destructive"
+              className="h-8 w-8 p-0 text-orange-600 hover:text-orange-700 cursor-pointer"
             >
               <Trash2 className="h-4 w-4" />
             </Button>

@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
-import { Plus, Twitter } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { Plus } from "lucide-react";
+import XIcon from "../assets/X.svg";
+import toast from "react-hot-toast";
 
 interface AddProfileFormProps {
   onAddProfile: (url: string) => boolean;
@@ -16,36 +23,29 @@ export function AddProfileForm({ onAddProfile }: AddProfileFormProps) {
     e.preventDefault();
 
     if (!url.trim()) {
-      console.log(
-        "URL Required: Please enter a Twitter/X profile URL or username."
-      );
+      toast.error("Please enter a Twitter/X profile URL or username.");
       return;
     }
 
     setIsAdding(true);
-
     const success = onAddProfile(url.trim());
 
     if (success) {
       setUrl("");
-      console.log(
-        "Profile Added: Twitter profile has been added to your list."
-      );
+      toast.success("Profile added successfully.");
     } else {
-      console.log(
-        "Unable to Add Profile: Invalid URL or profile already exists."
-      );
+      toast.error("Invalid URL or profile already exists.");
     }
 
     setIsAdding(false);
   };
 
   return (
-    <Card className="bg-gradient-card shadow-soft">
+    <Card className="border border-[#DCDCDC] shadow-md">
       <CardHeader className="pb-4">
         <CardTitle className="flex items-center gap-2 text-foreground">
-          <Twitter className="h-5 w-5 text-primary" />
-          Add Twitter Profile
+          <img src={XIcon} alt="" className="h-5 w-5 text-primary" />
+          Add X Profile
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -55,10 +55,14 @@ export function AddProfileForm({ onAddProfile }: AddProfileFormProps) {
             placeholder="Enter Twitter/X URL or @username"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            className="bg-background/50"
+            className=""
             disabled={isAdding}
           />
-          <Button type="submit" className="w-full" disabled={isAdding}>
+          <Button
+            type="submit"
+            className="w-full bg-[#F8D347] cursor-pointer hover:bg-[#F8D347]/90 text-black"
+            disabled={isAdding}
+          >
             <Plus className="h-4 w-4 mr-2" />
             {isAdding ? "Adding..." : "Add Profile"}
           </Button>
